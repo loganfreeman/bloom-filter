@@ -1,15 +1,15 @@
 Usage
 ---
 
-```java
-// Create a new bloom filter optimized for containing 100 elements and using 1024 bits of memory
-BloomFilter f = new BloomFilter(100, 1024);
+```bash
+mvn package
+java -jar ./target/bloom-filter-2.2.0.jar -k 25 -f /Users/scheng/code/bloomfilter/SRR1748776.fa
+```
 
-// Add elements to the filter
-// it uses Object.hashCode() internally, so you can add objects of any type
-f.add("hello");
-
-// Check if an element is in the filter
-f.contains("hello"); // true
-f.contains("hello, world!"); // false
+Result
+---
+```html
+Total kmers: 29513337
+Total distinct kmers: 3703997
+Highest count kmer: CGGAAGAGCGGTTCAGCAGGAATGC 72003
 ```
